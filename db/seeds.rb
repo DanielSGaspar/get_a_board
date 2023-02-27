@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+@category = ["Surfboard", "Longboard", "BuggieBoard"]
+
+@user = User.first
+
+puts 'dropping database'
+Listing.destroy_all
+puts 'creating database'
+
+5.times do |index|
+  puts "creating #{index}-Listing"
+  Listing.create!(
+    user: @user,
+    category: @category.sample,
+    title: Faker::ChuckNorris.fact,
+    description: Faker::Hipster.paragraph
+  )
+end
+puts "Database created"
