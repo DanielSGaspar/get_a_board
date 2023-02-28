@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-@category = ["Surfboard", "Longboard", "BuggieBoard"]
+@category = ["surfboard", "longboard", "bodyboard"]
 
 @user = User.first
 
