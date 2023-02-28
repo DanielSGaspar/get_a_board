@@ -1,9 +1,11 @@
-<div class='container pt-3'>
-  <h3>Create a new listing</h3>
-  <%= simple_form_for @listing do |f| %>
-    <%= f.input :category, :collection => %w[Surfboard Longboard Buggieboard]%>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.submit class: 'btn btn-flat' %>
-  <% end %>
+<div class="container my-5 d-flex justify-content-center">
+  <div class='container-form col-10 col-sm-6 mb-4'>
+    <h3 class="text-center">Create a new listing</h3>
+      <%= simple_form_for @listing do |f| %>
+        <%= f.select :category, Listing.categories.keys.map(&:capitalize), prompt: "Select a category" %>
+        <%= f.input :title, label: false, placeholder: "Name your listing" %>
+        <%= f.input :description, label: false, placeholder: "Say something about your listing" %>
+        <%= f.submit class: 'btn-form' %>
+      <% end %>
+  </div>
 </div>
