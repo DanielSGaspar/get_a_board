@@ -2,6 +2,11 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    @search = params["search"]
+    if @search.present?
+      @category = @search["category"]
+      @listings = Listing.where(category: @category)
+    end
   end
 
   def new
