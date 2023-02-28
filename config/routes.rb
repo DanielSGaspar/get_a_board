@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :listings, only: %i[index new create show] do
     resources :bookings, only: %i[new create destroy]
   end
+
+  
 end
