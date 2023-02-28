@@ -1,8 +1,51 @@
-<div class='container pt-3'>
-  <h3>New Booking</h3>
-  <%= simple_form_for [@listing, @booking] do |f| %>
-    <%= f.input :date_from%>
-    <%= f.input :date_to %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+<div class='pt-3'>
+  <div class="container mt-3">
+    <div class="d-flex align-items-center">
+      <div class="btn btn-light rounded-circle mr-3">
+        <%= link_to listings_path do%>
+          <i class="fa-solid fa-chevron-left"></i>
+        <%end%>
+      </div>
+
+      <h3 style="margin-bottom: 0;">New Booking</h3>
+    </div>
+
+
+    <div class="d-flex mt-3">
+      <div class="col-6">
+        <h2>Choose your dates:</h2>
+        <%= simple_form_for [@listing, @booking] do |f| %>
+          <%= f.input :date_from%>
+          <%= f.input :date_to %>
+          <hr class="horizontal-rule">
+          <h2>Cancellation Policy</h2>
+          <p><strong>Free cancellation 24 hours before pick up.</strong>Non-refundable for later cancellations</p>
+          <hr class="horizontal-rule">
+          <h2>Ground Rules</h2>
+          <p>We ask every one to remember a few simple things about how to treat rented material:</p>
+          <p><i class="fa-solid fa-thumbs-up"></i> Treat a rented board, like you would treat your own</p>
+          <p><i class="fa-solid fa-thumbs-up"></i> Respect the owner</p>
+          <p><i class="fa-solid fa-thumbs-down"></i> Return the board sandy or dirty</p>
+          <hr class="horizontal-rule">
+          <p><em>By selecting the button bellow, I agree to the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">GetaBoard Booking & Refund Policies</a>, and that GetaBoard can charge my payment method if I'm responsible for damage.</em></p>
+          <%= f.submit class: 'btn btn-primary mt-3' %>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <div class="d-flex justify-content-center sticky-top" style="top: 2em;">
+          <div class="card" style="width: 75%;">
+            <img src="https://images.unsplash.com/photo-1531722569936-825d3dd91b15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%=@listing.title%></h5>
+              <p class="card-text"><%=@listing.description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Daily rate: 25€</li>
+              <li class="list-group-item">Total price: 75€</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
