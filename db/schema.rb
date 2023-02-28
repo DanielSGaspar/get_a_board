@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_110726) do
 
   create_table "listings", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "category"
+    t.integer "category"
     t.string "title"
     t.text "description"
     t.string "images"

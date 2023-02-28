@@ -1,0 +1,37 @@
+#search_category {
+  height: 38px;
+  width: 250px;
+  border-radius: 20px 0 0 20px;
+  border-width: 0px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-right: -6px;
+  color: rgb(107, 107, 107);
+}
+
+.form-box {
+  display: flex;
+  vertical-align: middle;
+}
+
+select {
+  outline: none;
+}
+
+
+
+.btn-blue {
+  background-color: #00A9B5;
+	padding: 7px 20px;
+  border-radius: 0 20px 20px 0;
+	color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  clip-path: inset(-10px -10px -10px 0px);
+}
+
+.btn-blue:hover {
+  background-color: #01506D;
+}
