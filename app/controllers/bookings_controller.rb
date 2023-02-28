@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.save
 
     if @booking.save
-      redirect_to listings_path # Change to listing show or later to booking confirmation
+      redirect_to booking_confirmation_path(@booking) # Change to listing show or later to booking confirmation
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,6 +21,10 @@ class BookingsController < ApplicationController
   def destroy
     raise
     @booking = Booking.find(params)
+  end
+
+  def confirmation
+    @booking = Booking.find(params[:id])
   end
 
   private
