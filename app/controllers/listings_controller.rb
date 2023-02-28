@@ -9,6 +9,10 @@ class ListingsController < ApplicationController
     end
   end
 
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
   def new
     @listing = Listing.new
   end
