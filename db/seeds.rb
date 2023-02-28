@@ -20,7 +20,9 @@ puts 'creating database'
     user: @user,
     category: @category.sample,
     title: Faker::ChuckNorris.fact,
-    description: Faker::Hipster.paragraph
+    description: Faker::Hipster.paragraph,
+    rating: rand(1..5),
+    location: Faker::Address.street_address
   )
 end
 puts "Database created"
