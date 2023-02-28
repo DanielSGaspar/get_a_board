@@ -2,10 +2,9 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    @search = params["search"]
+    @search = params[:search]
     if @search.present?
-      @category = @search["category"]
-      @listings = Listing.where(category: @category)
+      @listings = Listing.where(category: params[:search][:category])
     end
   end
 
