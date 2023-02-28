@@ -54,6 +54,7 @@ select {
 
 .btn-form:hover {
   background-color: #01506D;
+  color: white;
 }
 
 #new_listing {
@@ -71,4 +72,19 @@ select {
   border-radius: 2px;
   height: 40px;
   padding-left: 7px;
+}
+
+.text-right {
+  text-align: end;
+  margin-top: -6px;
+}
+
+.btn-forgot {
+  font-size: 12px;
+  text-decoration: none;
+  color: #6C757D;
+}
+
+.btn-forgot:hover {
+  color: #474c50;
 }
