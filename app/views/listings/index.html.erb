@@ -6,8 +6,11 @@
   <div class="cards">
     <% @listings.each do |listing| %>
       <div class="card">
-
-        <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="...">
+         <%= link_to listing_path(listing) do %>
+         <div class="div-show-img">
+          <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="...">
+         </div>
+        <% end %>
 
         <div class="card-body">
           <div class="d-flex justify-content-between">
@@ -31,9 +34,3 @@
   </div>
   <% end %>
 </div>
-
-
-
-        <%# <%= link_to listing_path(listing) do %>
-          <%# <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="..."> %>
-        <%# <% end %>
