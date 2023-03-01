@@ -2,12 +2,12 @@
 
   <div class="mb-2">
     <h1><%= @listing.title %></h1>
-    <h>
+    <h4>
       <% @listing.rating.times do %>
         <i class="fa-solid fa-star"></i>
       <% end %>
-    </h4> |
-    <h><%=  @listing.location%> <i class="fa-solid fa-location-dot"></i> </h4>
+    </h4>
+    <h4><%=  @listing.location%> <i class="fa-solid fa-location-dot"></i> </h4>
   </div>
 
   <div class="d-flex justify-content-between image-grid">
@@ -38,8 +38,8 @@
       <div class= "d-flex justify-content-end mt-3">
         <div class="card" style="width: 75%;">
           <div class="card-body">
-            <h5 class="card-title">Daily Price</h5>
-            <p class="card-text">Availability</p>
+            <h5 class="card-title">Daily Price : €<%=@listing.price  %></h5>
+            <p class="card-text">Availability: <span style="color: green;">Available</span></p>
             <hr>
            <%=link_to "Book now", new_listing_booking_path(@listing), class:"btn btn-primary" %>
           </div>
