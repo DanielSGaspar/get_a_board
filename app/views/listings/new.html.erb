@@ -3,6 +3,7 @@
     <h3 class="text-center">Create a new listing</h3>
       <%= simple_form_for @listing do |f| %>
         <%= f.select :category, Listing.categories.keys.map(&:capitalize), prompt: "Select a category" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, placeholder: "Choose photos" %>
         <%= f.input :title, label: false, placeholder: "Name your listing" %>
         <%= f.input :description, label: false, placeholder: "Say something about your listing" %>
         <%= f.submit class: 'btn-form' %>
