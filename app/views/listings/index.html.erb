@@ -3,9 +3,21 @@
 
   <div class="cards">
     <% @listings.each do |listing| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
-        <%= listing.title %>
+      <div class="card">
+        <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <h6><% listing.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+              <% end %>
+            </h6>
+          </div>
+            <p class="card-text"><%= listing.description %></p>
+          <a href="#" class="btn btn-primary">Get A Board</a>
+        </div>
       </div>
     <% end %>
   </div>
+
 </div>
