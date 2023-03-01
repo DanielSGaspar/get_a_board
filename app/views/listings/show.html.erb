@@ -3,7 +3,7 @@
   <div class="mb-2">
     <h1><%= @listing.title %></h1>
     <h>
-      <% @listing.rating.times do %>
+      <% @listing.rating.each do %>
         <i class="fa-solid fa-star"></i>
       <% end %>
     </h4> |
