@@ -2,12 +2,12 @@
 
   <div class="mb-2">
     <h1><%= @listing.title %></h1>
-    <h>
-      <% @listing.rating.each do %>
+    <h4>
+      <% @listing.rating.times do %>
         <i class="fa-solid fa-star"></i>
       <% end %>
-    </h4> |
-    <h><%=  @listing.location%> <i class="fa-solid fa-location-dot"></i> </h4>
+    </h4>
+    <div><%=  @listing.location%> <i class="fa-solid fa-location-dot"></i> </div>
   </div>
 
   <div class="d-flex justify-content-between image-grid">
