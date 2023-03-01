@@ -15,7 +15,7 @@
       <div class="col-6">
         <h2>Choose your dates:</h2>
         <%= simple_form_for [@listing, @booking] do |f| %>
-          <%= f.input :date_from%>
+          <%= f.input :date_from, as: :date%>
           <%= f.input :date_to %>
           <hr class="horizontal-rule">
           <h2>Cancellation Policy</h2>

@@ -1,6 +1,8 @@
 <div class="mx-5 mt-3">
-  <h2>Listings</h2>
-
+  <% if @listings.empty? %>
+      <h4>No results found</h4>
+  <% else %>
+  <h2>Available listings</h2>
   <div class="cards">
     <% @listings.each do |listing| %>
       <div class="card">
@@ -27,6 +29,7 @@
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
 
 

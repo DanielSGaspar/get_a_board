@@ -2,10 +2,9 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    @search = params["search"]
+    @search = params[:search]
     if @search.present?
-      @category = @search["category"]
-      @listings = Listing.where(category: @category)
+      @listings = Listing.where(category: params[:search][:category])
     end
   end
 
@@ -30,7 +29,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :category, :description)
+    params.require(:listing).permit(:title, :category, :description, photos: [])
   end
 
 end

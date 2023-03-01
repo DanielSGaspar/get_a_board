@@ -1,0 +1,42 @@
+.btn-blue {
+  background-color: #00A9B5;
+	padding: 7px 20px;
+  border-radius: 0 20px 20px 0;
+	color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  clip-path: inset(-10px -10px -10px 0px);
+}
+
+.btn-blue:hover {
+  background-color: #01506D;
+}
+
+.btn-form {
+  background-color: #00A9B5;
+	padding: 7px 20px;
+  border-radius: 20px;
+  color: white;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.btn-form:hover {
+  background-color: #01506D;
+  color: white;
+}
+
+.btn-forgot {
+  font-size: 12px;
+  text-decoration: none;
+  color: #6C757D;
+}
+
+.btn-forgot:hover {
+  color: #474c50;
+}
