@@ -1,10 +1,12 @@
 <div class="mx-5 mt-3">
-  <h2>My Listings</h2>
+  <h2>Listings</h2>
 
   <div class="cards">
     <% @listings.each do |listing| %>
       <div class="card">
+
         <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="...">
+
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <h5 class="card-title"><%= listing.title %></h5>
@@ -13,11 +15,22 @@
               <% end %>
             </h6>
           </div>
-            <p class="card-text"><%= listing.description %></p>
-          <a href="#" class="btn btn-primary">Get A Board</a>
+              <h9 class="card-location"><%= listing.location %> <i class="fa-solid fa-location-dot"></i></h9>
+              <p class="card-text"><%= listing.description[0,100] %>...</p>
+            <hr>
+            <div class="d-flex justify-content-between">
+
+              <%=link_to "More Details", listing_path(listing), class:"btn btn-primary" %>
+              <p>€ <%= listing.price %></p>
+            </div>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
+
+
+
+        <%# <%= link_to listing_path(listing) do %>
+          <%# <img class="img-index" src="https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="card-img-top" alt="..."> %>
+        <%# <% end %>
