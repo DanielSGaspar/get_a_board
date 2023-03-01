@@ -34,6 +34,12 @@
   object-fit: cover;
 }
 
+.div-show-img {
+  img {
+    width: 100%;
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
