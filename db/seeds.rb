@@ -14,6 +14,7 @@ title = ["Al Merrick", "Pyzel", "Tokoro", "Sharpeye"]
 size = ["6.0'", "7.8'", "5.8'", "8.0'"]
 user = User.first
 price = [100, 150, 200, 180]
+location = ["Cascais", "Estoril", "Lisboa"]
 
 puts 'dropping database'
 Booking.destroy_all
@@ -28,7 +29,7 @@ puts 'creating database'
     title: "#{title.sample} #{size.sample}",
     description: Faker::Hipster.paragraph,
     rating: rand(1..5),
-    location: Faker::Address.street_address,
+    location: location.sample,
     price: price.sample
   )
 end

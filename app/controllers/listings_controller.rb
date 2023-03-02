@@ -2,6 +2,15 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+      }
+    end
+
     @search = params[:search]
     if @search.present?
       @listings = Listing.where(category: params[:search][:category])
@@ -10,6 +19,14 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+
+    @markers = [
+      {
+        lat: @listing.latitude,
+        lng: @listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})
+      }
+    ]
   end
 
   def new

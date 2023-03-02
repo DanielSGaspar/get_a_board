@@ -6,4 +6,6 @@ class Listing < ApplicationRecord
   validates :category, :title, :description, presence: true
   # Adding categories for dropdown
   enum :category, { Surfboard: 0, Longboard: 1, Bodyboard: 2 }
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

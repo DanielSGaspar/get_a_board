@@ -83,3 +83,5 @@ gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "main
 
 # Gemfile
 gem "cloudinary"
+
+gem "geocoder"
