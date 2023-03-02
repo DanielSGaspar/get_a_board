@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
 
+user1 = User.create(email: "zemanel@gmail.com", password: "111111")
 
-@category = ["Surfboard", "Longboard", "Bodyboard"]
-@title = ["Al Merrick", "Pyzel", "Tokoro", "Sharpeye"]
-@size = ["6.0'", "7.8'", "5.8'", "8.0'"]
-@user = User.first
-@price = [100, 150, 200, 180]
-@location = ["Cascais", "Estoril", "Lisboa"]
+category = ["Surfboard", "Longboard", "Bodyboard"]
+title = ["Al Merrick", "Pyzel", "Tokoro", "Sharpeye"]
+size = ["6.0'", "7.8'", "5.8'", "8.0'"]
+user = User.first
+price = [100, 150, 200, 180]
+location = ["Cascais", "Estoril", "Lisboa"]
 
 puts 'dropping database'
 Booking.destroy_all
@@ -22,13 +24,13 @@ puts 'creating database'
 5.times do |index|
   puts "creating #{index}-Listing"
   Listing.create!(
-    user: @user,
-    category: @category.sample,
-    title: "#{@title.sample} #{@size.sample}",
+    user: user1,
+    category: category.sample,
+    title: "#{title.sample} #{size.sample}",
     description: Faker::Hipster.paragraph,
     rating: rand(1..5),
-    location: @location.sample,
-    price: @price.sample
+    location: location.sample,
+    price: price.sample
   )
 end
 puts "Database created"

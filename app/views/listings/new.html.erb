@@ -6,6 +6,8 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false, placeholder: "Choose photos" %>
         <%= f.input :title, label: false, placeholder: "Name your listing" %>
         <%= f.input :description, label: false, placeholder: "Say something about your listing" %>
+        <%= f.input :location, label: false, placeholder: "Pick-up location" %>
+        <%= f.input :price, label: false, placeholder: "Name your price" %>
         <%= f.submit class: 'btn-form' %>
       <% end %>
   </div>

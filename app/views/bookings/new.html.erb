@@ -15,8 +15,14 @@
       <div class="col-6">
         <h2>Choose your dates:</h2>
         <%= simple_form_for [@listing, @booking] do |f| %>
-          <%= f.input :date_from, as: :date%>
-          <%= f.input :date_to %>
+          <div class="d-flex flex-frow mt-3">
+            <div class="flex-fill">
+              <%= f.input :date_from, as: :date, html5: true%>
+            </div>
+            <div class="flex-fill">
+              <%= f.input :date_to, as: :date, html5: true%>
+            </div>
+          </div>
           <hr class="horizontal-rule">
           <h2>Cancellation Policy</h2>
           <p><strong>Free cancellation 24 hours before pick up.</strong> Non-refundable for later cancellations.</p>
@@ -40,8 +46,8 @@
               <p class="card-text"><%=@listing.description%></p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Daily rate: 25€</li>
-              <li class="list-group-item">Total price: 75€</li>
+              <li class="list-group-item">Daily rate: € <%=@listing.price %></li>
+              <li class="list-group-item">Total price: When this grows up it will become the total</li>
             </ul>
           </div>
         </div>
