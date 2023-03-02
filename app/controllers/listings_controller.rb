@@ -3,9 +3,19 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
     @search = params[:search]
-    if @search.present?
+    if @search.nil?
+      @listings = Listing.all
+    elsif @search[:location].present? && @search[:category].present?
       @listings = Listing.where(category: params[:search][:category])
+      @listings = @listings.where("location ILIKE ?", "%#{params[:search][:location]}%")
+    elsif @search[:category].present?
+      @listings = Listing.where(category: params[:search][:category])
+    elsif @search[:location].present?
+      @listings = @listings.where("location ILIKE ?", "%#{params[:search][:location]}%")
+    else
+      @listings = Listing.all
     end
+
   end
 
   def show
