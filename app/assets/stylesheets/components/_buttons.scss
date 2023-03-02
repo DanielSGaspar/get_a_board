@@ -8,10 +8,28 @@
   transition: background-color 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   clip-path: inset(-10px -10px -10px 0px);
+  height: 38px;
 }
 
 .btn-blue:hover {
   background-color: #01506D;
+}
+
+.btn-grey {
+  background-color: #bcbcbc;
+	padding: 7px 20px;
+  border-radius: 0 20px 20px 0;
+	color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  clip-path: inset(-10px -10px -10px 0px);
+  height: 38px;
+}
+
+.btn-grey:hover {
+  background-color: #7d7d7d;
 }
 
 .btn-form {

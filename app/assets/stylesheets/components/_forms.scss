@@ -1,12 +1,24 @@
 #search_category {
   height: 38px;
-  width: 250px;
+  width: 200px;
   border-radius: 20px 0 0 20px;
   border-width: 0px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: #6C757D;
+}
+
+#search_location {
+  height: 38px;
+  width: 150px;
+  border-width: 0px;
+  border-radius: 0;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin-right: -6px;
-  color: rgb(107, 107, 107);
+  color: #6C757D;
+  background-color: white;
+  clip-path: inset(-10px -10px -10px 0px);
 }
 
 .form-box {
