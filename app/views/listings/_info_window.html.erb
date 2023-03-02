@@ -1,0 +1,15 @@
+<%=link_to listing_path(listing) do %>
+<div class="card-img" style="background-image: url(https://images.unsplash.com/photo-1579042936650-2656bcb1dd22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)">
+</div>
+<% end %>
+
+<div class="d-flex justify-content-between mt-2">
+  <h5><%= listing.title %></h5>
+  <p><%= listing.location %> <i class="fa-solid fa-location-dot"></i></p>
+</div>
+
+ <hr style="margin-top: 0;">
+<div class="d-flex justify-content-between">
+  <%=link_to "More Details", listing_path(listing), class:"btn btn-primary" %>
+  <p class="price-size">€ <%= listing.price %></p>
+</div>

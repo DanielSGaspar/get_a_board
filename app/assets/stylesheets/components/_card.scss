@@ -28,6 +28,24 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.location-map-card {
+  width: 100px;
+  height: 120px;
+}
+
+.price-size {
+  font-size: 20px;
+}
+
+.card-img {
+  margin-top: 15px;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
 .movie-img {
   width: 100%;
   height: 250px;

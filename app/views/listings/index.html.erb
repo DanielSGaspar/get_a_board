@@ -33,4 +33,13 @@
     <% end %>
   </div>
   <% end %>
-</div>
+
+    <hr>
+
+  <h2>Location :</h2>
+
+  <div style="width: 100%; height: 600px;" class="rounded-4 mt-3"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>

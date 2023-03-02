@@ -40,3 +40,16 @@
 .btn-forgot:hover {
   color: #474c50;
 }
+
+.zoom-btn {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 6px;
+  cursor: pointer;
+}
