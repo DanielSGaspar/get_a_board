@@ -9,8 +9,7 @@ export default class extends Controller {
 
 
   connect() {
-
-    console.log(this.availabilityTarget.children[1])
+    let index = 1
     // let date_from = Date.new
 
     // this.fromTarget.addEventListener("input", () => {
@@ -22,9 +21,10 @@ export default class extends Controller {
       console.log(this.fromTarget.value)
       if (this.fromTarget.value){
         console.log("hi")
-        const span = this.availabilityTarget.children[1]
+        const span = this.availabilityTarget.children[index]
         if (span){
-          this.availabilityTarget.children[1].innerHTML = ""
+          this.availabilityTarget.children[index].innerHTML = ""
+          index += 1
         }
         this.insert_html(this.check_availability);
 
