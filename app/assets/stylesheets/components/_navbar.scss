@@ -2,6 +2,8 @@
   justify-content: space-between;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
 }
 
 .navbar-getaboard .navbar-collapse {
@@ -27,4 +29,14 @@
     margin-bottom: 0;
     font-size: smaller;
   }
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.navbar-nav {
+  margin-right: 1vw;
 }

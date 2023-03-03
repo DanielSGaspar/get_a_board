@@ -4,8 +4,9 @@
       <h5 class="home-header">What type of board are you looking for?</h5>
     </div>
     <div class="form-box">
-      <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= simple_form_for :search, url: listings_path, method: "GET", html: { class: 'form-inline d-flex' } do |f| %>
       <%= f.select :category, Listing.categories.keys.map(&:capitalize), prompt: "Select a category", class: "form-box" %>
+      <%= f.input :location, input_html: { value: params[:location] }, label: false, class: "form-box", placeholder: "Where?" %>
       <%= f.submit "Search", class: "btn-blue" %>
       <% end %>
     </div>

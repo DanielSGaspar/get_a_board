@@ -10,8 +10,14 @@ application.register("check-availability", CheckAvailabilityController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
+
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)

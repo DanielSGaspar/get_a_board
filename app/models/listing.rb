@@ -14,4 +14,6 @@ class Listing < ApplicationRecord
   def available?(from, to)
     bookings.where(date_from: ..to).where(date_to: from..).empty?
   end
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

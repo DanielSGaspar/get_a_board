@@ -2,10 +2,29 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    @search = params[:search]
-    if @search.present?
-      @listings = Listing.where(category: params[:search][:category])
+
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+      }
     end
+
+    @search = params[:search]
+    if @search.nil?
+      @listings = Listing.all
+    elsif @search[:location].present? && @search[:category].present?
+      @listings = Listing.where(category: params[:search][:category])
+      @listings = @listings.where("location ILIKE ?", "%#{params[:search][:location]}%")
+    elsif @search[:category].present?
+      @listings = Listing.where(category: params[:search][:category])
+    elsif @search[:location].present?
+      @listings = @listings.where("location ILIKE ?", "%#{params[:search][:location]}%")
+    else
+      @listings = Listing.all
+    end
+
   end
 
   def show
@@ -16,6 +35,14 @@ class ListingsController < ApplicationController
         date_to: booking.date_to
       }
     end
+
+    @markers = [
+      {
+        lat: @listing.latitude,
+        lng: @listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})
+      }
+    ]
   end
 
   def new
