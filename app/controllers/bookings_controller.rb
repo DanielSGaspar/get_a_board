@@ -9,10 +9,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
     @booking.user = current_user
-    @booking.save
 
     if @booking.save
-      redirect_to booking_confirmation_path(@booking) # Change to listing show or later to booking confirmation
+      redirect_to booking_confirmation_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,6 +26,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def check_availability
+
+  end
+
   private
 
   def set_listing
@@ -36,4 +39,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date_from, :date_to)
   end
+
 end
