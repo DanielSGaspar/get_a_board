@@ -5,7 +5,7 @@
   <h2>Available listings</h2>
   <div class="cards">
     <% @listings.each do |listing| %>
-      <div class="card">
+      <div class="card h-100">
          <%= link_to listing_path(listing) do %>
          <div class="div-show-img">
           <% if listing.photos.present? %>
@@ -29,7 +29,7 @@
             <hr>
             <div class="d-flex justify-content-between">
 
-              <%=link_to "More Details", listing_path(listing), class:"btn btn-primary" %>
+              <%=link_to "More Details", listing_path(listing), class:"btn btn-primary", style: "width: fit-content;"%>
               <p>€ <%= listing.price %></p>
             </div>
         </div>
