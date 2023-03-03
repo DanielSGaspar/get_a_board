@@ -10,6 +10,12 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @booking_dates = @listing.bookings.map do |booking|
+      {
+        date_from: booking.date_from,
+        date_to: booking.date_to
+      }
+    end
   end
 
   def new
