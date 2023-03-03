@@ -47,6 +47,7 @@
           <div class="card-body" data-controller="check-availability" data-check-availability-bookings-value="<%=@booking_dates.to_json%>">
             <h5 class="card-title">Daily Price : €<%=@listing.price  %></h5>
             <hr>
+           <%=link_to "Book now", new_listing_booking_path(@listing), class:"btn-form" %>
             <h3>Check availability</h3>
             <form action="<%= new_listing_booking_path(@listing) %>" method="get">
               <div class="mt-2 d-flex ">
@@ -61,7 +62,7 @@
                 <p class="card-text" style="margin-bottom: 0; margin-right: 3px;">Availability:  </p>
               </div>
               <hr>
-              <input type="submit" name="Book now" class="btn btn-primary" value="Book now">
+              <input type="submit" name="Book now" class="btn-form" value="Book now">
             </form>
           </div>
         </div>
