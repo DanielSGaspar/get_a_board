@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CheckAvailabilityController from "./check_availability_controller"
+application.register("check-availability", CheckAvailabilityController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

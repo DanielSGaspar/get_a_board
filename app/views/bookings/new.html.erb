@@ -17,10 +17,10 @@
         <%= simple_form_for [@listing, @booking] do |f| %>
           <div class="d-flex flex-frow mt-3">
             <div class="flex-fill">
-              <%= f.input :date_from, as: :date, html5: true%>
+              <%= f.input :date_from, as: :date, html5: true, input_html: {value: params[:from], id: 'date_from'}%>
             </div>
             <div class="flex-fill">
-              <%= f.input :date_to, as: :date, html5: true%>
+              <%= f.input :date_to, as: :date, html5: true, input_html: {value: params[:to], id: 'date_to'}%>
             </div>
           </div>
           <hr class="horizontal-rule">

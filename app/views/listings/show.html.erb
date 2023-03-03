@@ -1,7 +1,14 @@
 <div class= "container">
 
   <div class="mb-2">
-    <h1><%= @listing.title %></h1>
+    <div class="d-flex mt-2">
+        <div class="btn btn-light rounded-circle mr-3">
+          <%= link_to listings_path do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <%end%>
+        </div>
+      <h1><%= @listing.title %></h1>
+    </div>
     <h4>
       <% @listing.rating.times do %>
         <i class="fa-solid fa-star"></i>
@@ -37,11 +44,26 @@
     <div class= "col-6">
       <div class= "d-flex justify-content-end mt-3">
         <div class="card" style="width: 75%;">
-          <div class="card-body">
+          <div class="card-body" data-controller="check-availability" data-check-availability-bookings-value="<%=@booking_dates.to_json%>">
             <h5 class="card-title">Daily Price : €<%=@listing.price  %></h5>
-            <p class="card-text">Availability: <span style="color: green;">Available</span></p>
             <hr>
            <%=link_to "Book now", new_listing_booking_path(@listing), class:"btn-form" %>
+            <h3>Check availability</h3>
+            <form action="<%= new_listing_booking_path(@listing) %>" method="get">
+              <div class="mt-2 d-flex ">
+                <div class="flex-fill">
+                  <p>From: </p><input type="date" name="from" data-check-availability-target="from">
+                </div>
+                <div class="flex-fill">
+                  <p>To: </p><input type="date" name="to" data-check-availability-target="to">
+                </div>
+              </div>
+              <div class="mt-3 d-flex"  data-check-availability-target="availability">
+                <p class="card-text" style="margin-bottom: 0; margin-right: 3px;">Availability:  </p>
+              </div>
+              <hr>
+              <input type="submit" name="Book now" class="btn-form" value="Book now">
+            </form>
           </div>
         </div>
       </div>
@@ -55,7 +77,8 @@
     <div style="width: 100%; height: 600px;" class="rounded-4 mt-4"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-map-action-value="<%= action_name %>">
   </div>
 
 </div>
