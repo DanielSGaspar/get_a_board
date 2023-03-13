@@ -33,7 +33,6 @@ export default class extends Controller {
 
     //
   }
-
   // #update_from_date(){
   //   date_from = this.fromTarget.value
   // }
